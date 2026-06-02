@@ -1,0 +1,16 @@
+# Direnv
+/.direnv
+
+# Nix build results
+/result
+/result-*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Zip files
+*.zip

@@ -1,0 +1,64 @@
+version: "3"
+
+vars:
+  USERNAME:
+    sh: whoami
+  HOME_DIR: /Users/{{.USERNAME}}
+  HOSTNAME:
+    sh: "(scutil --get ComputerName 2>/dev/null || uname -n) | tr -cd 'A-Za-z0-9-' | tr ' ' '-'"
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  gc:
+    cmds:
+      - nix-collect-garbage
+    desc: Tidy up the nix store
+
+  build-config:
+    internal: true
+    silent: true
+    cmds:
+      - |
+        nix build .#darwinConfigurations.{{.HOSTNAME}}.system --impure --show-trace --refresh
+
+  switch-config:
+    internal: true
+    silent: true
+    cmds:
+      - |
+        if command -v darwin-rebuild &> /dev/null; then
+          sudo darwin-rebuild switch --flake .#{{.HOSTNAME}} --impure --show-trace --refresh
+        else
+          sudo nix run nix-darwin -- switch --flake .#{{.HOSTNAME}} --impure --show-trace --refresh
+        fi
+
+  update:
+    cmds:
+      - nix flake update
+    desc: Update the flake.lock file
+
+  update-mailerlite:
+    cmds:
+      - nix flake update mailerlite
+    desc: Update the mailerlite input in the flake.lock file
+
+  update-hash:
+    internal: true
+    cmds:
+      - ml-update-hash 2>/dev/null || true
+    desc: Update the stored hash after successful build
+
+  build:
+    deps: [update-mailerlite]
+    cmds:
+      - task: build-config
+      - task: switch-config
+      - task: update-hash
+    desc: Build and apply the new configuration based on the OS
+
+  update-build:
+    deps: [update, build]
+    desc: Update the flake.lock file and build the new configuration
