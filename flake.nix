@@ -121,7 +121,38 @@
                   ]);
 
                 # Your personal home-manager configuration
-                # programs.git.userEmail = "your.name@mailerlite.com";
+                programs.git.userEmail = "tomas.martty@mailerlite.com";
+
+                programs.starship = {
+                  enable = true;
+                  enableZshIntegration = true;
+                  settings = {
+                    format = "$directory$git_branch$git_status $character";
+                    add_newline = false;
+                    character = {
+                      success_symbol = "[➜](bold green)";
+                      error_symbol = "[✗](bold red)";
+                    };
+                    directory = {
+                      truncation_length = 3;
+                      truncate_to_repo = true;
+                    };
+                    git_branch = {
+                      symbol = " ";
+                      style = "bold purple";
+                    };
+                    kubernetes = {
+                      disabled = false;
+                      symbol = "☸ ";
+                    };
+                    nix_shell = {
+                      disabled = true;
+                    };
+                    gcloud = {
+                      disabled = true;
+                    };
+                  };
+                };
               };
             };
           }
