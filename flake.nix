@@ -21,9 +21,30 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nix-darwin, home-manager, mailerlite, ... }@inputs:
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-stable,
+    nix-darwin,
+    home-manager,
+    mailerlite,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
+    ...
+  }@inputs:
     let
       system = "aarch64-darwin";
       username = "tmartty";
@@ -50,6 +71,18 @@
         inherit system;
         specialArgs = { inherit username hostname mailerlite; };
         modules = [
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              user = username;
+              taps = {
+                "homebrew/homebrew-core" = homebrew-core;
+                "homebrew/homebrew-cask" = homebrew-cask;
+              };
+              mutableTaps = false;
+            };
+          }
           # Import all MailerLite darwin modules
           mailerlite.modules.darwin.defaults
           home-manager.darwinModules.home-manager
@@ -116,8 +149,27 @@
                   mailerlite.pkgs.${system}.dev
                   ++ (with pkgs; [
                     # Add your own packages here
-                    # bob # unstable packages
-                    # stable.bob # stable packages
+
+                    # JavaScript/TypeScript
+                    nodejs_22
+                    bun
+                    pnpm
+                    yarn
+
+                    # PHP
+                    php83
+                    php83Packages.composer
+
+                    # Python
+                    python312
+                    python312Packages.pip
+
+                    # Go
+                    go
+                    gopls
+
+                    # Rust
+                    rustup
                   ]);
 
                 # Your personal home-manager configuration
