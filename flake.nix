@@ -155,19 +155,15 @@
                     bun
                     pnpm
                     yarn
-
                     # PHP
                     php83
                     php83Packages.composer
-
                     # Python
                     python312
                     python312Packages.pip
-
                     # Go
                     go
                     gopls
-
                     # Rust
                     rustup
                   ]);
