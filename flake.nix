@@ -149,21 +149,25 @@
                   mailerlite.pkgs.${system}.dev
                   ++ (with pkgs; [
                     # Add your own packages here
-
+                    
                     # JavaScript/TypeScript
                     nodejs_22
                     bun
                     pnpm
                     yarn
+
                     # PHP
                     php83
                     php83Packages.composer
+
                     # Python
                     python312
                     python312Packages.pip
+
                     # Go
                     go
                     gopls
+
                     # Rust
                     rustup
                   ]);
