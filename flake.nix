@@ -150,7 +150,10 @@
                   mailerlite.pkgs.${system}.dev
                   ++ (with pkgs; [
                     # Add your own packages here
+                    
+                    # Terminal
                     lazygit
+                    ranger
                     
                     # JavaScript/TypeScript
                     nodejs_22
