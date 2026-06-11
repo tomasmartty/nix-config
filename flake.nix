@@ -150,6 +150,7 @@
                   mailerlite.pkgs.${system}.dev
                   ++ (with pkgs; [
                     # Add your own packages here
+                    lazygit
                     
                     # JavaScript/TypeScript
                     nodejs_22
@@ -205,6 +206,20 @@
                       disabled = true;
                     };
                   };
+                };
+
+                programs.lazygit = {
+                  enable = true;
+                  settings = {
+                    gui = {
+                      theme = {
+                        lightTheme = false;
+                        activeBorderColor = [ "yellow" ];
+                        inactiveBorderColor = [ "black" ];
+                        optionsTextColor = [ "white" ];
+                      };
+                    };
+                  };  
                 };
               };
             };
