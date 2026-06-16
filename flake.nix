@@ -162,8 +162,8 @@
                     yarn
 
                     # PHP
-                    php83
-                    php83Packages.composer
+                    php84
+                    php84Packages.composer
 
                     # Python
                     python312
