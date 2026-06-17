@@ -178,7 +178,8 @@
                   ]);
 
                 # Your personal home-manager configuration
-                programs.git.userEmail = "tomas.martty@mailerlite.com";
+                programs.git.settings.user.email = "tomas.martty@mailerlite.com";
+                programs.git.settings.user.name = "Tomás Martty";
 
                 programs.starship = {
                   enable = true;
