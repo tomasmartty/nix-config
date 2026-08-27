@@ -23,11 +23,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1781834167,
-        "narHash": "sha256-QICaJgQrHt2NND/JtDS1yb/yb9l1RiPp1jZrCAoQnoE=",
+        "lastModified": 1787797694,
+        "narHash": "sha256-ndPj44RsdM5qPigQJ2VZa5Uxxdd/LXBH/szPPUg2vc0=",
         "owner": "nklmilojevic",
         "repo": "claude-code-overlay",
-        "rev": "0a9e1c4b6e73b169d56537dc5dbe12f40ff292d2",
+        "rev": "573e73f8a76420aa5da2345fd8ffb103d8e7275b",
         "type": "github"
       },
       "original": {
@@ -156,7 +156,7 @@
         ]
       },
       "locked": {
-        "narHash": "sha256-SRZ4n959i2ovO33DcgvVpQzbRN9HXFa9LXMtMBGS8mc=",
+        "narHash": "sha256-73Jk+RsWTuG9pe1wvd8zFOF0HTnEnrNnE8LL2tVoJ6M=",
         "path": "/Users/tmartty/.config/mailerlite/nix-config",
         "type": "path"
       },
@@ -171,11 +171,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1771525832,
-        "narHash": "sha256-ZOOaaVpi1jHKCwhVlTUbVQKlMHQuMaSPsTaodDm2onQ=",
+        "lastModified": 1787050399,
+        "narHash": "sha256-ioC6VIZ5ULOV/7hcaOEckSzTzWGrSRFh4Jdqf2NXKCc=",
         "owner": "mailerlite",
         "repo": "mailerlite-cli",
-        "rev": "2dbcba26016620be0b42d2da5a7dd3cb04d49a2e",
+        "rev": "712e0b84825f0f7a21e5813dd264651d428bd318",
         "type": "github"
       },
       "original": {
@@ -190,11 +190,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1771525327,
-        "narHash": "sha256-KxEyuMUtNtGqwwEY80pLwQiqs1CiNbDZ4YYoAlXd8Gk=",
+        "lastModified": 1787061353,
+        "narHash": "sha256-mWElhxrAYtASpK2pMHkKTmKjb3Br3nIafzNcl3XCNao=",
         "owner": "mailersend",
         "repo": "mailersend-cli",
-        "rev": "532628ea6d1e9cb09112623bee9ced1a8e78b811",
+        "rev": "b32c7f5abad6830745fee23af5dc40d35c28cd39",
         "type": "github"
       },
       "original": {

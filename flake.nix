@@ -161,10 +161,6 @@
                     pnpm
                     yarn
 
-                    # PHP
-                    php84
-                    php84Packages.composer
-
                     # Python
                     python312
                     python312Packages.pip
