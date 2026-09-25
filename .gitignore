@@ -14,3 +14,4 @@
 
 # Zip files
 *.zip
+/flake.lock
