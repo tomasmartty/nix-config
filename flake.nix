@@ -17,7 +17,7 @@
 
     # MailerLite shared configuration
     mailerlite = {
-      url = "path:/Users/tmartty/.config/mailerlite/nix-config";
+      url = "path:/Users/tomasmartty/.config/mailerlite/nix-config";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
@@ -47,7 +47,7 @@
   }@inputs:
     let
       system = "aarch64-darwin";
-      username = "tmartty";
+      username = "tomasmartty";
       hostname = "TomassMacBookPro";
 
       overlays = [
