@@ -174,8 +174,20 @@
                   ]);
 
                 # Your personal home-manager configuration
-                programs.git.settings.user.email = "tomas.martty@mailerlite.com";
-                programs.git.settings.user.name = "Tomás Martty";
+                programs.git = {
+                enable = true;
+                settings = {
+                  user = {
+                    name = "Tomás Martty";
+                    email = "tomas.martty@mailerlite.com";
+                  };
+                };
+                signing = {
+                    key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHL5OOmxNkCPUuTi3hN1P/Lp+fMxitENimbJXPEF3bxA";
+                    format = "ssh";
+                    signByDefault = true;
+                  };
+                };
 
                 programs.starship = {
                   enable = true;
