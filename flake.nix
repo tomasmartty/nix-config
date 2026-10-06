@@ -127,6 +127,7 @@
                 "orbstack"
                 "spotify"
                 "firefox"
+                "claude"
               ];
             };
 
