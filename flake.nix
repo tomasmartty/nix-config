@@ -108,6 +108,28 @@
             nixpkgs.config.allowUnfree = true;
             nixpkgs.overlays = overlays;
 
+            # Homebrew casks (brew itself is installed by nix-homebrew above)
+            homebrew = {
+              enable = true;
+              onActivation = {
+                autoUpdate = true;
+                cleanup = "zap";
+              };
+              taps = [
+                "homebrew/homebrew-core"
+                "homebrew/homebrew-cask"
+              ];
+              casks = [
+                "1password"
+                "slack"
+                "zoom"
+                "visual-studio-code"
+                "orbstack"
+                "spotify"
+                "firefox"
+              ];
+            };
+
             # Configure mailerlite darwin modules (optional)
             mailerlite = { };
 
