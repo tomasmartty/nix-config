@@ -128,6 +128,7 @@
                 "spotify"
                 "firefox"
                 "claude"
+                "postman"
               ];
             };
 
