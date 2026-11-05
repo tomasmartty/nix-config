@@ -130,6 +130,7 @@
                 "google-chrome"
                 "claude"
                 "postman"
+                "tablepro"
               ];
             };
 
